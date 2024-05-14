@@ -43,10 +43,13 @@ namespace AlunosApi.Services
             _context.Alunos.Add(aluno);
             await _context.SaveChangesAsync();
         }
-        public async Task UpdateAluno(Aluno aluno)
+        public async Task<Aluno> UpdateAluno(Aluno aluno)
         {
             _context.Entry(aluno).State = EntityState.Modified;
             await _context.SaveChangesAsync();
+
+            return aluno;
+
         }
         public async Task DeleteAluno(Aluno aluno)
         {
