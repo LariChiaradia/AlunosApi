@@ -23,6 +23,7 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>()
     .AddDefaultTokenProviders();
 
 builder.Services.AddScoped<IAlunoService, AlunosService>();
+builder.Services.AddScoped<IAuthenticate, AuthenticateService>();
 
 var app = builder.Build();
 
